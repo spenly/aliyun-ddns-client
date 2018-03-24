@@ -61,6 +61,7 @@ def main():
             continue
 
         # if we can fetch remote record and record's value doesn't equal to public IP
+        DDNSUtils.info("Current public IP: %s" % dns_resolved_ip)
         sync_result = record_manager.update(remote_record, current_public_ip)
         if not sync_result:
             DDNSUtils.err("Failed updating DomainRecord" \
